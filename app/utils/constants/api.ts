@@ -1,5 +1,5 @@
-export const APP_URL = "/ipod";
-export const API_URL = `${APP_URL}/api`;
+export const APP_URL = "";
+export const API_URL = `/api`;
 
 export const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
 export const SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
