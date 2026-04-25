@@ -46,8 +46,8 @@ export const ScreenContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 800px;
-  height: 424px; /* 480px - 56px touch bar */
+  width: 640px;
+  height: 480px;
   overflow: hidden;
   background: white;
   animation: fadeFromBlack 0.5s;

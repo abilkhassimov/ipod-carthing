@@ -1,65 +1,84 @@
 "use client";
 import styled from "styled-components";
 import {
-  dispatchBackClickEvent,
   dispatchBackwardScrollEvent,
   dispatchCenterClickEvent,
-  dispatchForwardClickEvent,
   dispatchForwardScrollEvent,
   dispatchMenuClickEvent,
-  dispatchPlayPauseClickEvent,
 } from "@/utils/events";
 
-const Bar = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 56px;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px);
+const Panel = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 160px;
+  height: 480px;
+  background: #1c1c1e;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: stretch;
   z-index: 1000;
   user-select: none;
+  border-left: 1px solid #333;
 `;
 
 const Btn = styled.button`
+  flex: 1;
   background: none;
   border: none;
-  color: #fff;
-  font-size: 20px;
-  padding: 8px 16px;
+  border-bottom: 1px solid #2c2c2e;
+  color: #f2f2f7;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.3px;
   cursor: pointer;
-  opacity: 0.85;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  &:last-child {
+    border-bottom: none;
+  }
 
   &:active {
-    opacity: 0.5;
+    background: rgba(255, 255, 255, 0.08);
   }
 `;
 
-const SelectBtn = styled(Btn)`
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const Icon = styled.span`
+  font-size: 22px;
+  line-height: 1;
+`;
+
+const Label = styled.span`
+  font-size: 11px;
+  color: #8e8e93;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 `;
 
 export const TouchControls = () => (
-  <Bar>
-    <Btn onPointerDown={dispatchMenuClickEvent} title="Menu">☰</Btn>
-    <Btn onPointerDown={dispatchBackClickEvent} title="Prev">⏮</Btn>
-    <Btn onPointerDown={dispatchBackwardScrollEvent} title="Up">▲</Btn>
-    <SelectBtn onPointerDown={dispatchCenterClickEvent} title="Select">●</SelectBtn>
-    <Btn onPointerDown={dispatchForwardScrollEvent} title="Down">▼</Btn>
-    <Btn onPointerDown={dispatchForwardClickEvent} title="Next">⏭</Btn>
-    <Btn onPointerDown={dispatchPlayPauseClickEvent} title="Play/Pause">⏯</Btn>
-  </Bar>
+  <Panel>
+    <Btn onPointerDown={dispatchMenuClickEvent}>
+      <Icon>☰</Icon>
+      <Label>Меню</Label>
+    </Btn>
+    <Btn onPointerDown={dispatchBackwardScrollEvent}>
+      <Icon>▲</Icon>
+      <Label>Вверх</Label>
+    </Btn>
+    <Btn onPointerDown={dispatchCenterClickEvent}>
+      <Icon>●</Icon>
+      <Label>Выбор</Label>
+    </Btn>
+    <Btn onPointerDown={dispatchForwardScrollEvent}>
+      <Icon>▼</Icon>
+      <Label>Вниз</Label>
+    </Btn>
+  </Panel>
 );
