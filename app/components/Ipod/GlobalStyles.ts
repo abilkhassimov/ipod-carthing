@@ -1,20 +1,15 @@
 import { createGlobalStyle } from "styled-components";
-import { Screen } from "@/utils/constants";
 
 export const GlobalStyles = createGlobalStyle`
   body {
-    height: 100dvh;
-    display: grid;
+    width: 800px;
+    height: 480px;
     margin: 0;
+    overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     color: black;
-    min-height: 550px;
-    overflow: auto;
-
-    ${Screen.XS.MediaQuery} {
-      min-height: 480px;
-    }
+    background: black;
   }
 
   a {
