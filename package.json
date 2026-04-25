@@ -44,6 +44,6 @@
     "eslint-plugin-react-memo": "^0.0.3",
     "eslint-plugin-unused-imports": "^4.4.1",
     "prettier": "^3.8.3",
-    "typescript": "npm:@typescript/typescript6"
+    "typescript": "^5.9.3"
   }
 }

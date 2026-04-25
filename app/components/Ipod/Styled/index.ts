@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Screen, Unit } from "@/utils/constants";
+import { Screen } from "@/utils/constants";
 import { DeviceThemeName, getTheme } from "@/utils/themes";
 
 export const Shell = styled.div<{ $deviceTheme: DeviceThemeName }>`
@@ -43,11 +43,11 @@ export const Shell = styled.div<{ $deviceTheme: DeviceThemeName }>`
 `;
 
 export const ScreenContainer = styled.div`
-  position: relative;
-  height: 260px;
-  margin: ${Unit.LG} ${Unit.LG} 0;
-  border: 4px solid black;
-  border-radius: ${Unit.XS};
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   background: white;
   animation: fadeFromBlack 0.5s;
@@ -56,10 +56,6 @@ export const ScreenContainer = styled.div`
     0% {
       filter: brightness(0);
     }
-  }
-
-  ${Screen.SM.MediaQuery} {
-    margin: ${Unit.MD} ${Unit.MD} 0;
   }
 `;
 

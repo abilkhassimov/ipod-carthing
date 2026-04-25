@@ -3,19 +3,12 @@ import { memo, useCallback, useState } from "react";
 import * as SpotifyUtils from "@/utils/spotify";
 import {
   AudioPlayerProvider,
-  SettingsContext,
   SettingsProvider,
   useEffectOnce,
 } from "@/hooks";
-import { ClickWheel, ViewManager } from "@/components";
-import {
-  ScreenContainer,
-  ClickWheelContainer,
-  Shell,
-  Sticker,
-  Sticker2,
-  Sticker3,
-} from "@/components/Ipod/Styled";
+import { ViewManager } from "@/components";
+import { ScreenContainer } from "@/components/Ipod/Styled";
+import { CarThingKeyboard } from "@/components/CarThingKeyboard";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SpotifySDKProvider } from "@/providers/SpotifySdkProvider";
 import { MusicKitProvider } from "@/providers/MusicKitProvider";
@@ -69,21 +62,10 @@ const Ipod = ({ appleAccessToken, spotifyCallbackCode }: Props) => {
           <SpotifySDKProvider>
             <MusicKitProvider token={appleAccessToken}>
               <AudioPlayerProvider>
-                <SettingsContext.Consumer>
-                  {([{ deviceTheme }]) => (
-                    <Shell $deviceTheme={deviceTheme}>
-                      <Sticker $deviceTheme={deviceTheme} />
-                      <Sticker2 $deviceTheme={deviceTheme} />
-                      <Sticker3 $deviceTheme={deviceTheme} />
-                      <ScreenContainer>
-                        <ViewManager />
-                      </ScreenContainer>
-                      <ClickWheelContainer>
-                        <ClickWheel />
-                      </ClickWheelContainer>
-                    </Shell>
-                  )}
-                </SettingsContext.Consumer>
+                <CarThingKeyboard />
+                <ScreenContainer>
+                  <ViewManager />
+                </ScreenContainer>
               </AudioPlayerProvider>
             </MusicKitProvider>
           </SpotifySDKProvider>
