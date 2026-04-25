@@ -69,7 +69,7 @@ export const SpotifySDKProvider = ({ children }: Props) => {
     if (accessToken) {
       try {
         const player = new window.Spotify.Player({
-          name: "iPod.js",
+          name: "iPod",
           getOAuthToken: async (cb) => {
             if (!accessToken) {
               console.error(

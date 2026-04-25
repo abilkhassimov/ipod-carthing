@@ -13,8 +13,8 @@ export const getArtwork = (size: number | string, url?: string) => {
 
 export const setDocumentSongTitle = (song?: AppleMusicApi.Song) => {
   document.title = song
-    ? `${song.attributes?.name ?? "Music"} – iPod.js`
-    : "iPod.js";
+    ? `${song.attributes?.name ?? "Music"} – iPod`
+    : "iPod";
 };
 
 /** Returns a list of playback options to display in a popup for an album, song, or playlist. */

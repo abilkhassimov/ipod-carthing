@@ -71,7 +71,7 @@ export const VIEW_REGISTRY = {
   home: {
     component: HomeView,
     type: "split",
-    title: "iPod.js",
+    title: "iPod",
     isSplitScreen: true,
   } as ViewConfig<"home">,
 
