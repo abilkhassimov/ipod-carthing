@@ -10,6 +10,7 @@ import { ViewManager } from "@/components";
 import { ScreenContainer } from "@/components/Ipod/Styled";
 import { CarThingKeyboard } from "@/components/CarThingKeyboard";
 import { TouchControls } from "@/components/TouchControls";
+import { ScaleWrapper } from "@/components/ScaleWrapper";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SpotifySDKProvider } from "@/providers/SpotifySdkProvider";
 import { MusicKitProvider } from "@/providers/MusicKitProvider";
@@ -63,11 +64,13 @@ const Ipod = ({ appleAccessToken, spotifyCallbackCode }: Props) => {
           <SpotifySDKProvider>
             <MusicKitProvider token={appleAccessToken}>
               <AudioPlayerProvider>
-                <CarThingKeyboard />
-                <ScreenContainer>
-                  <ViewManager />
-                </ScreenContainer>
-                <TouchControls />
+                <ScaleWrapper>
+                  <CarThingKeyboard />
+                  <ScreenContainer>
+                    <ViewManager />
+                  </ScreenContainer>
+                  <TouchControls />
+                </ScaleWrapper>
               </AudioPlayerProvider>
             </MusicKitProvider>
           </SpotifySDKProvider>

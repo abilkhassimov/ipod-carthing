@@ -1,15 +1,16 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
-  body {
-    width: 800px;
-    height: 480px;
+  html, body {
+    width: 100%;
+    height: 100%;
     margin: 0;
+    padding: 0;
     overflow: hidden;
+    background: black;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     color: black;
-    background: black;
   }
 
   a {

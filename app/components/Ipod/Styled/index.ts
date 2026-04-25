@@ -43,7 +43,7 @@ export const Shell = styled.div<{ $deviceTheme: DeviceThemeName }>`
 `;
 
 export const ScreenContainer = styled.div`
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 800px;
