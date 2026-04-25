@@ -7,7 +7,7 @@ import {
   useEffectOnce,
 } from "@/hooks";
 import { ViewManager } from "@/components";
-import { ScreenContainer } from "@/components/Ipod/Styled";
+import { ScreenContainer, ContentScaler } from "@/components/Ipod/Styled";
 import { CarThingKeyboard } from "@/components/CarThingKeyboard";
 import { TouchControls } from "@/components/TouchControls";
 import { ScaleWrapper } from "@/components/ScaleWrapper";
@@ -67,7 +67,9 @@ const Ipod = ({ appleAccessToken, spotifyCallbackCode }: Props) => {
                 <ScaleWrapper>
                   <CarThingKeyboard />
                   <ScreenContainer>
-                    <ViewManager />
+                    <ContentScaler>
+                      <ViewManager />
+                    </ContentScaler>
                   </ScreenContainer>
                   <TouchControls />
                 </ScaleWrapper>

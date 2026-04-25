@@ -63,6 +63,14 @@ export const ClickWheelContainer = styled.div`
   margin: auto;
 `;
 
+export const ContentScaler = styled.div`
+  width: 320px;
+  height: 240px;
+  transform: scale(2);
+  transform-origin: top left;
+  overflow: hidden;
+`;
+
 export const Sticker = styled.div<{ $deviceTheme: DeviceThemeName }>`
   position: absolute;
   background: ${({ $deviceTheme }) =>

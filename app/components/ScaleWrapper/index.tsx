@@ -31,7 +31,7 @@ export const ScaleWrapper = ({ children }: { children: React.ReactNode }) => {
       const scale = Math.min(
         window.innerWidth / TARGET_W,
         window.innerHeight / TARGET_H
-      ) * 2;
+      );
       innerRef.current.style.transform = `scale(${scale})`;
     };
     update();
