@@ -15,6 +15,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SpotifySDKProvider } from "@/providers/SpotifySdkProvider";
 import { MusicKitProvider } from "@/providers/MusicKitProvider";
 import ViewContextProvider from "@/providers/ViewContextProvider";
+import { BridgeProvider } from "@/providers/BridgeProvider";
 import { useRouter } from "next/navigation";
 import { GlobalStyles } from "@/components/Ipod/GlobalStyles";
 import Script from "next/script";
@@ -64,6 +65,7 @@ const Ipod = ({ appleAccessToken, spotifyCallbackCode }: Props) => {
           <SpotifySDKProvider>
             <MusicKitProvider token={appleAccessToken}>
               <AudioPlayerProvider>
+                <BridgeProvider>
                 <ScaleWrapper>
                   <CarThingKeyboard />
                   <ScreenContainer>
@@ -73,6 +75,7 @@ const Ipod = ({ appleAccessToken, spotifyCallbackCode }: Props) => {
                   </ScreenContainer>
                   <TouchControls />
                 </ScaleWrapper>
+                </BridgeProvider>
               </AudioPlayerProvider>
             </MusicKitProvider>
           </SpotifySDKProvider>
